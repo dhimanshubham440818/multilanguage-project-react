@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react'
+
 export default function NavLink() {
     const { t, i18n } = useTranslation();
     const [lang, setLang] = useState("English");
@@ -11,7 +12,7 @@ export default function NavLink() {
     },[lang])
     return (
         <>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+        <nav class="navbar navbar-expand-lg px-5 navbar-light bg-light" >
             <a class="navbar-brand" href="#"><h1>{t("NavBar")}</h1></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -30,7 +31,9 @@ export default function NavLink() {
                     <li class="nav-item">
                         <select class="nav-link text-dark" value={lang} onChange={(e)=>{handleChange(e)}}>
                             <option value="en">English</option>
-                            <option value="hi">हिंदी</option>
+                            <option value="hi">Hindi</option>
+                            <option value="ud">Urdu</option>
+                            <option value="ch">Chinese</option>
                         </select>
                     </li>
                 </ul>
